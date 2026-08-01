@@ -1,0 +1,89 @@
+{
+  "project_name": "ProTrack - Manufacturing Management SaaS",
+  "theme_strategy": {
+    "mode": "system",
+    "description": "Industrial Technical Dashboard. Follows ARCHETYPE 4: SWISS & HIGH-CONTRAST. Avoid soft gradients, glossy surfaces, and 'AI-slop'. Emphasize data density, clear hierarchy, and stark structural components.",
+    "border_radius": "2px (sharp, industrial feel)",
+    "shadows": "None. Use 1px borders to separate elements."
+  },
+  "typography": {
+    "headings": {
+      "family": "IBM Plex Sans",
+      "style": "tracking-tight, font-semibold to font-bold",
+      "usage": "Page titles, card headers, primary KPIs."
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "style": "leading-snug text-sm to text-base",
+      "usage": "General UI text, forms, navigation."
+    },
+    "data_metrics": {
+      "family": "IBM Plex Mono",
+      "style": "tracking-tighter, tabular-nums",
+      "usage": "Numerical KPIs, chart labels, data tables, stock quantities."
+    }
+  },
+  "colors": {
+    "archetype": "ARCHETYPE 4: SWISS & HIGH-CONTRAST",
+    "light_mode": {
+      "background": "#F8FAFC",
+      "surface": "#FFFFFF",
+      "border": "#E2E8F0",
+      "text_primary": "#0F172A",
+      "text_secondary": "#64748B"
+    },
+    "dark_mode": {
+      "background": "#09090B",
+      "surface": "#18181B",
+      "border": "#27272A",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA"
+    },
+    "brand_primary": "#2563EB",
+    "status": {
+      "success": "#16A34A",
+      "warning": "#EAB308",
+      "danger": "#DC2626",
+      "info": "#3B82F6"
+    }
+  },
+  "layouts": {
+    "general": "Collapsible left sidebar for main navigation (Menu, Cek & Report, Master Data). Top header for Breadcrumbs, Language Switcher (ID/EN), User Profile.",
+    "dashboard_grid": "Mode B (High Density Grid). Base grid `grid-cols-1 md:grid-cols-4`. Tight gaps `gap-4`. Top row for 4 core KPIs. Middle row for main Line/Bar chart (`col-span-3`) and a supporting donut/metric (`col-span-1`). Bottom row for recent exceptions/tables.",
+    "forms": "Grid-based modular forms (Bento style). Dense spacing. Inputs have crisp 1px borders.",
+    "tables": "Dense layout, no extra whitespace. Right-align numerical data. Use monospaced font for all numbers."
+  },
+  "components_instructions": {
+    "cards": "Go cardless or use flat, rectangular cards with 1px border. DO NOT use soft shadows. E.g., `border border-zinc-200 bg-white rounded-sm` (or dark equivalent).",
+    "buttons": "Sharp corners (`rounded-sm`), high contrast. Primary actions are solid blue, secondary actions are outline.",
+    "forms": "Use Shadcn `Input`, `Select`, `Form`. Keep form labels small and uppercase (`text-xs uppercase tracking-widest`).",
+    "charts": "Use Recharts (via Shadcn if available). Minimal axes, stark contrast lines. No soft gradient fills under line charts, keep it technical.",
+    "navigation": "Sidebar must have active states with distinct left-border highlight. Must support Admin vs User views.",
+    "login": "Split screen layout. Left: Hero image (factory background) with dark overlay (`bg-black/50`). Right: Dense login form (JWT credentials + Google Auth Button)."
+  },
+  "image_urls": {
+    "login_background": {
+      "url": "https://images.unsplash.com/photo-1717386255773-1e3037c81788?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBpbmR1c3RyaWFsJTIwZmFjdG9yeSUyMG1hbnVmYWN0dXJpbmclMjBwbGFudCUyMGludGVyaW9yfGVufDB8fHx8MTc4NTU1Nzg1OXww&ixlib=rb-4.1.0&q=85",
+      "description": "Modern industrial factory manufacturing plant interior",
+      "category": "login_page_hero"
+    }
+  },
+  "key_features_to_implement": [
+    "Authentication (JWT + Google Auth) with User vs Admin roles.",
+    "Language switcher (Bahasa Indonesia / English).",
+    "Dashboard: Production reports, KPI metrics, dynamic charts.",
+    "Data Entry: Production, Stock, Operational Hours, GI/GR.",
+    "Reports: Stock Check, PDF/Excel Exports (using appropriate JS libraries like jspdf/xlsx).",
+    "Master Data Management (Admin only)."
+  ],
+  "testing_attributes": "All interactive elements (buttons, form inputs, tabs, export buttons) MUST include `data-testid` attributes (e.g., `data-testid='login-submit-button'`, `data-testid='export-pdf-button'`).",
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic 'AI slop' aesthetics. Do NOT use purple or random gradients.",
+    "Implement a robust layout with Sidebar Navigation, Topbar, and a Main Content area.",
+    "Use Shadcn UI components extensively, overriding default border-radius to `rounded-sm`.",
+    "Ensure the data visualizations (charts) are readable with high contrast.",
+    "Do not center-align the main app container; use a full-width dashboard layout.",
+    "Include hover states and micro-animations for all buttons and interactive rows, but keep them subtle and technical (e.g., fast transitions, no bounce).",
+    "Never use transparent backgrounds for dropdowns or modals."
+  ]
+}
